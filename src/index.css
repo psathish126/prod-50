@@ -2,39 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Golden Jubilee Design System - PSG College of Technology Production Engineering
+Premium color palette and design tokens for 50th anniversary celebration
 */
 
 @layer base {
   :root {
+    /* Base Colors */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 216 19% 16%;
 
+    /* Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 216 19% 16%;
+    --card-hover: 45 100% 98%;
 
+    /* Popover System */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 216 19% 16%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Golden Jubilee Primary Colors */
+    --primary: 45 93% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 43 96% 42%;
+    --primary-glow: 45 100% 70%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Institutional Deep Blue */
+    --secondary: 214 84% 21%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-hover: 214 84% 16%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Elegant Neutrals */
+    --muted: 220 13% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Sophisticated Accents */
+    --accent: 45 100% 95%;
+    --accent-foreground: 216 19% 16%;
+    --accent-gold: 45 93% 47%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Border & Input System */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 45 93% 47%;
+
+    /* Premium Gradients */
+    --gradient-jubilee: linear-gradient(135deg, hsl(45, 93%, 47%), hsl(45, 100%, 70%));
+    --gradient-institutional: linear-gradient(135deg, hsl(214, 84%, 21%), hsl(214, 84%, 31%));
+    --gradient-hero: linear-gradient(135deg, hsl(45, 93%, 47%) 0%, hsl(45, 100%, 70%) 50%, hsl(214, 84%, 21%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0, 0%, 100%) 0%, hsl(45, 100%, 98%) 100%);
+
+    /* Luxury Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(45 93% 47% / 0.1);
+    --shadow-card-hover: 0 8px 40px -4px hsl(45 93% 47% / 0.2);
+    --shadow-jubilee: 0 0 30px hsl(45 93% 47% / 0.3);
+    --shadow-institutional: 0 4px 20px -2px hsl(214 84% 21% / 0.1);
+
+    /* Animation System */
+    --transition-smooth: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-fast: all 0.2s ease-out;
 
     --radius: 0.5rem;
 
@@ -94,6 +127,7 @@ All colors MUST be HSL.
   }
 }
 
+/* Premium Utility Classes */
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +135,138 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Golden Jubilee Gradients */
+  .gradient-jubilee {
+    background: var(--gradient-jubilee);
+  }
+  
+  .gradient-institutional {
+    background: var(--gradient-institutional);
+  }
+  
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  /* Luxury Shadows */
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-card-hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+  
+  .shadow-jubilee {
+    box-shadow: var(--shadow-jubilee);
+  }
+  
+  .shadow-institutional {
+    box-shadow: var(--shadow-institutional);
+  }
+
+  /* Premium Animations */
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slide-in-right 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+  }
+
+  .animate-golden-pulse {
+    animation: golden-pulse 2s ease-in-out infinite;
+  }
+
+  /* Smooth Transitions */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  .transition-fast {
+    transition: var(--transition-fast);
+  }
+}
+
+@layer keyframes {
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-scale {
+    0% {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slide-in-right {
+    0% {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes golden-pulse {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(45 93% 47% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(45 93% 47% / 0.6), 0 0 60px hsl(45 93% 47% / 0.3);
+    }
+  }
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
   }
 }
