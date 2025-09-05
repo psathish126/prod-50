@@ -1,211 +1,224 @@
-import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, User, Clock, ExternalLink, Trophy, Zap, Users } from 'lucide-react';
+import { Calendar, ExternalLink, Award, Phone, Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+import PSGEDSPoster from "@/assets/posters/PSG-EDS.jpeg";
+import PSGTESAPoster from "@/assets/posters/PSG-TESA.jpeg";
+import PSGJANATICSPoster from "@/assets/posters/PSG-JANATICS.jpeg";
+import CADCAMPoster from "@/assets/posters/CAD-CAM.jpeg";
+import SEFIPRAPoster from "@/assets/posters/CEFIPRA.jpeg";
+import SeminarPoster from "@/assets/posters/Seminar.jpeg";
+import LecturePoster from "@/assets/posters/Lecture.jpeg";
 
 const Events = () => {
   const events = [
     {
       id: 1,
-      title: "Golden Jubilee Inauguration Ceremony",
-      description: "Grand opening ceremony featuring distinguished alumni, industry leaders, and academic luminaries celebrating 50 years of excellence in production engineering.",
-      date: "March 15, 2024",
-      time: "10:00 AM - 12:00 PM",
-      venue: "PSG Tech Auditorium",
-      coordinator: "Dr. Rajesh Kumar",
-      contact: "+91 98765 43210",
-      image: "🎉",
-      category: "ceremony"
+      title: "Distinguished Lecture Series on Emerging & Cutting-edge Advancements",
+      description:
+        "Ongoing lecture series (online & offline) covering advancements in production and allied fields.",
+      poster: LecturePoster,
+      organizers: ["Dr. S.P. Leo Kumar (Associate Professor)"],
+      coorganizers: ["Dr. S. Hari Chealvan (Asst. Professor)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "-",
+      date: "From August 2025 onwards",
+      brochure: "/brochures/lectures.pdf",
     },
     {
       id: 2,
-      title: "Industry 4.0 & Smart Manufacturing",
-      description: "Cutting-edge conference on IoT, AI, and automation in manufacturing. Features keynotes from leading industrialists and hands-on technology demonstrations.",
-      date: "March 16, 2024", 
-      time: "9:00 AM - 5:00 PM",
-      venue: "Convention Center",
-      coordinator: "Prof. Priya Sharma",
-      contact: "+91 98765 43211",
-      image: "🏭",
-      category: "conference"
+      title: 'Institution of Engineers (India) All India Seminar on "World Quality Month 2025"',
+      description:
+        "National seminar highlighting excellence in quality across industries for a sustainable future.",
+      poster: SeminarPoster,
+      organizers: [
+        "Dr. M.R. Pratheesh Kumar (Associate Professor)",
+        "Dr. R. Rajamani (Asst. Professor Sr.Gr)",
+      ],
+      coorganizers: ["Mr. K. Saravanakumar (Asst. Professor Sr.Gr)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "-",
+      date: "28-29 November 2025",
+      brochure: "/brochures/quality.pdf",
     },
     {
       id: 3,
-      title: "Alumni Meet & Awards Gala",
-      description: "Prestigious gathering of alumni from 5 decades, featuring achievement awards, networking sessions, and a grand dinner celebrating our production engineering legacy.",
-      date: "March 17, 2024",
-      time: "6:00 PM - 11:00 PM", 
-      venue: "Grand Ballroom",
-      coordinator: "Dr. Ananya Patel",
-      contact: "+91 98765 43212",
-      image: "🏆",
-      category: "networking"
+      title: 'PSG-TESA Technologies Competition on "Metrology and Quality Control"',
+      description:
+        "Competition focusing on precision measurement and quality control in modern manufacturing.",
+      poster: PSGTESAPoster,
+      organizers: [
+        "Dr. M.R. Pratheesh Kumar (Associate Professor)",
+        "Dr. R. Rajamani (Asst. Professor Sr.Gr)",
+      ],
+      coorganizers: ["Mr. K. Saravanakumar (Asst. Professor Sr.Gr)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "Rs. 20,000/-",
+      date: "January 2026",
+      brochure: "/brochures/metrology.pdf",
     },
     {
       id: 4,
-      title: "Student Innovation Showcase",
-      description: "Platform for current students to present innovative projects, compete for prizes, and interact with industry experts. Features live demonstrations and poster presentations.",
-      date: "March 18, 2024",
-      time: "1:00 PM - 6:00 PM",
-      venue: "Innovation Lab",
-      coordinator: "Dr. Vikram Singh",
-      contact: "+91 98765 43213", 
-      image: "💡",
-      category: "competition"
+      title: 'PSG-EDS Technologies Competition on "CAD MODELING using 3D Experience CATIA"',
+      description:
+        "Industry-sponsored competition to enhance design skills in 3D modeling using CATIA platform.",
+      poster: PSGEDSPoster,
+      organizers: ["Dr. J. Pradeep Kumar (Associate Professor)"],
+      coorganizers: ["Dr. R. Naveen Anthuvan (Asst. Professor Sr.Gr)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "Rs. 10,000/-",
+      date: "January 2026",
+      brochure: "/brochures/catia.pdf",
     },
     {
       id: 5,
-      title: "Future of Manufacturing Symposium",
-      description: "Forward-looking discussions on sustainable manufacturing, green technology, and the role of production engineering in addressing global challenges.",
-      date: "March 19, 2024",
-      time: "10:00 AM - 4:00 PM",
-      venue: "Seminar Hall",
-      coordinator: "Prof. Deepak Menon",
-      contact: "+91 98765 43214",
-      image: "🌱",
-      category: "symposium"
+      title: "CAD/CAM and CNC Programming Competition",
+      description:
+        "Competition to test expertise in CAD/CAM design and CNC machining programming.",
+      poster: CADCAMPoster,
+      organizers: ["Dr. K. Anand (Associate Professor)"],
+      coorganizers: ["Dr. R. Rajesh (Asst. Professor Sr.Gr)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "-",
+      date: "January 2026",
+      brochure: "/brochures/cadcam.pdf",
     },
     {
       id: 6,
-      title: "Cultural Evening & Farewell",
-      description: "Spectacular cultural performances, entertainment programs, and closing ceremony marking the end of our golden jubilee celebrations with memorable moments.",
-      date: "March 20, 2024",
-      time: "7:00 PM - 10:00 PM",
-      venue: "Open Air Theatre",
-      coordinator: "Dr. Meera Krishnan",
-      contact: "+91 98765 43215",
-      image: "🎭",
-      category: "cultural"
-    }
+      title: 'PSG-JANATICS Competition on "Automation and Robotics"',
+      description:
+        "A robotics and automation competition to encourage innovation in industrial automation solutions.",
+      poster: PSGJANATICSPoster,
+      organizers: ["Dr. S. Elangovan (Associate Professor)"],
+      coorganizers: [
+        "Dr. Jayakrishnan Nampoothiri (Asst. Professor)",
+        "Mr. N. Muthuram (Asst. Professor Sr.Gr)",
+      ],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "Rs. 50,000/-",
+      date: "January 2026",
+      brochure: "/brochures/robotics.pdf",
+    },
+    {
+      id: 7,
+      title:
+        'CEFIPRA Indo-French Research Seminar on "Additive Manufacturing: Aerospace & Biomedical"',
+      description:
+        "International seminar focusing on additive manufacturing in aerospace and biomedical industries.",
+      poster: SEFIPRAPoster,
+      organizers: ["Dr. V. Krishnaraj (Professor CAS)", "Dr. G. Madhan Mohan (Professor CAS)"],
+      coorganizers: ["Dr. Jayakrishnan Nampoothiri (Asst. Professor)"],
+      coordinators: [
+        { name: "Mr. Sathish Kumar P", phone: "+91 96294 63964", email: "22p126@psgtech.ac.in" },
+      ],
+      prize: "-",
+      date: "2-3 March 2026",
+      brochure: "/brochures/additive.pdf",
+    },
   ];
 
-  const getCategoryIcon = (category: string) => {
-    switch(category) {
-      case 'ceremony': return <Trophy className="w-5 h-5" />;
-      case 'conference': return <Zap className="w-5 h-5" />;
-      case 'networking': return <Users className="w-5 h-5" />;
-      case 'competition': return <Trophy className="w-5 h-5" />;
-      case 'symposium': return <Zap className="w-5 h-5" />;
-      case 'cultural': return <Users className="w-5 h-5" />;
-      default: return <Calendar className="w-5 h-5" />;
-    }
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch(category) {
-      case 'ceremony': return 'border-primary bg-primary/5';
-      case 'conference': return 'border-secondary bg-secondary/5';
-      case 'networking': return 'border-accent-gold bg-accent-gold/5';
-      case 'competition': return 'border-primary bg-primary/5';
-      case 'symposium': return 'border-secondary bg-secondary/5';
-      case 'cultural': return 'border-accent-gold bg-accent-gold/5';
-      default: return 'border-muted bg-muted/5';
-    }
-  };
-
   return (
-    <section id="events" className="py-24 bg-background">
+    <section id="events" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6 animate-fade-in-up">
-            Jubilee <span className="text-primary">Events</span>
-          </h2>
-          <p className="text-lg text-foreground/70 max-w-3xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            Join us for an unforgettable week of celebrations, learning, and networking as we commemorate 
-            50 years of excellence in production engineering.
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Events & Workshops</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Explore the industry-sponsored competitions, seminars, and lectures during the Golden Jubilee celebrations.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {events.map((event, index) => (
-            <div 
+        {/* Event Grid */}
+        <div className="grid gap-8 md:grid-cols-2">
+          {events.map((event) => (
+            <div
               key={event.id}
-              className="gradient-card rounded-2xl shadow-card hover:shadow-card-hover transition-smooth border border-primary/10 overflow-hidden animate-fade-in-up"
-              style={{ animationDelay: `${0.1 * index}s` }}
+              className="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition p-6 flex flex-col"
             >
-              {/* Event Header */}
-              <div className="p-6 pb-4">
-                <div className="flex items-start justify-between mb-4">
-                  <div className={`inline-flex items-center space-x-2 px-3 py-1 rounded-full border ${getCategoryColor(event.category)}`}>
-                    {getCategoryIcon(event.category)}
-                    <span className="text-sm font-medium capitalize">{event.category}</span>
-                  </div>
-                  <div className="text-4xl">{event.image}</div>
+              {/* Poster */}
+              <img
+                src={event.poster}
+                alt={event.title}
+                className="w-full h-70 object-cover rounded-lg mb-4"
+              />
+
+              {/* Title + Description */}
+              <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
+              <p className="text-gray-600 mb-4">{event.description}</p>
+
+              {/* Details */}
+              <div className="space-y-2 text-sm text-gray-700 mb-6 flex-1">
+                <div className="flex items-center gap-2">
+                  <Calendar className="w-4 h-4" /> {event.date}
                 </div>
-                
-                <h3 className="text-xl font-bold text-foreground mb-3">{event.title}</h3>
-                <p className="text-foreground/70 leading-relaxed mb-6">{event.description}</p>
+                {event.prize !== "-" && (
+                  <div className="flex items-center gap-2">
+                    <Award className="w-4 h-4" /> {event.prize} PRIZEPOOL
+                  </div>
+                )}
+                <div>
+                  <strong>Organizers:</strong>
+                  <ul className="list-disc list-inside ml-2">
+                    {event.organizers.map((org, idx) => (
+                      <li key={idx}>{org}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <strong>Co-organizers:</strong>
+                  <ul className="list-disc list-inside ml-2">
+                    {event.coorganizers.map((co, idx) => (
+                      <li key={idx}>{co}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <strong>Coordinator:</strong>
+                  <ul className="list-disc list-inside ml-2">
+                    {event.coordinators.map((co, idx) => (
+                      <li key={idx} className="flex flex-col">
+                        <span>{co.name}</span>
+                        <div className="flex gap-3 mt-1 text-blue-600">
+                          <a href={`tel:${co.phone}`} className="flex items-center gap-1">
+                            <Phone className="w-4 h-4" /> {co.phone}
+                          </a>
+                          <a href={`mailto:${co.email}`} className="flex items-center gap-1">
+                            <Mail className="w-4 h-4" /> {co.email}
+                          </a>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
-              {/* Event Details */}
-              <div className="px-6 pb-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center">
-                      <Calendar className="w-4 h-4 text-primary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{event.date}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center">
-                      <Clock className="w-4 h-4 text-secondary" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{event.time}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-accent-gold/10 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-4 h-4 text-accent-gold" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{event.venue}</div>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
-                      <User className="w-4 h-4 text-muted-foreground" />
-                    </div>
-                    <div>
-                      <div className="text-sm font-medium text-foreground">{event.coordinator}</div>
-                      <div className="text-xs text-foreground/60">{event.contact}</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Event Actions */}
-              <div className="px-6 pb-6">
-                <div className="flex flex-col sm:flex-row gap-3">
-                  <Button variant="premium" className="flex-1">
-                    Register Now
+              {/* Buttons */}
+              <div className="flex gap-3 mt-auto">
+                <Button className="flex-1">Register</Button>
+                <a
+                  href={event.brochure}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1"
+                >
+                  <Button variant="outline" className="w-full flex items-center gap-2">
+                    <ExternalLink className="w-4 h-4" /> Details
                   </Button>
-                  <Button variant="outline" size="default">
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Details
-                  </Button>
-                </div>
+                </a>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="gradient-card p-8 rounded-2xl shadow-card border border-primary/10 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Don't Miss Out!</h3>
-            <p className="text-foreground/70 mb-6">
-              Register for multiple events and be part of this historic celebration. 
-              Special discounts available for alumni and students.
-            </p>
-            <Button variant="jubilee" size="lg">
-              <Trophy className="w-5 h-5 mr-2" />
-              View All Events
-            </Button>
-          </div>
         </div>
       </div>
     </section>
