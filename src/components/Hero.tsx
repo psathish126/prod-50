@@ -51,10 +51,10 @@ const Hero = () => {
             style={{ animationDelay: '0.2s' }}
           >
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary drop-shadow-sm mb-3 block ">
-              Golden Jubilee
+              Department of Production Engineering
             </h2>
             <p className="text-lg md:text-2xl text-foreground/80 font-bold tracking-wide ">
-              Department of Production Engineering
+               Golden Jubilee Celebration (1974 - 2025)
             </p>
           </div>
 
@@ -64,7 +64,7 @@ const Hero = () => {
             style={{ animationDelay: '0.4s' }}
           >
             <p className="text-xl md:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed italic">
-              Celebrating 50 Years of Excellence in Engineering Innovation,
+              Celebrating 50 Years of Excellence in Engineering Students,
               <br />
               Shaping Tomorrow's Manufacturing Leaders
             </p>
@@ -77,8 +77,8 @@ const Hero = () => {
           >
             {[
               { value: '50', label: 'Years of Excellence' },
+              { value: '', label: '' },
               { value: '5000+', label: 'Alumni Worldwide' },
-              { value: '100+', label: 'Industry Partners' },
             ].map((stat, i) => (
               <div key={i} className="text-center">
                 <div className="text-5xl md:text-6xl font-extrabold text-yellow-400 drop-shadow-md mb-3">

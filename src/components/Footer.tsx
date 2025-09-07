@@ -37,7 +37,7 @@ const Footer = () => {
             {/* Social Links */}
             <div className="flex space-x-3">
               <a
-                href="https://instagram.com/your-instagram"
+                href="https://www.instagram.com/pea_sme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-pink-500/20 hover:bg-pink-500/30 rounded-lg flex items-center justify-center transition-smooth group"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <Instagram className="w-4 h-4 text-pink-400 group-hover:scale-110 transition-smooth" />
               </a>
               <a
-                href="https://linkedin.com/in/your-linkedin"
+                href="https://www.linkedin.com/company/pea-sme-psg-tech/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-8 h-8 bg-blue-600/20 hover:bg-blue-600/30 rounded-lg flex items-center justify-center transition-smooth group"
@@ -148,11 +148,22 @@ const Footer = () => {
               <p className="text-1xl text-secondary-foreground/70">
                 © 2025 All rights reserved.
               </p>
-              <p className="text-1xl text-secondary-foreground/60 mt-1">
-                Designed and developed by{" "}
-                <span className="font-semibold">Sathish Kumar P</span> (Final
-                Year B.E. Production Engineering).
-              </p>
+             <p className="text-1xl text-secondary-foreground/60 mt-1">
+  Designed and developed by{" "}
+  <a
+    href="https://in.linkedin.com/in/sathishkumarp126"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="font-semibold text-primary hover:underline"
+  >
+    Sathish Kumar P
+  </a>{" "}
+  (Final Year B.E. Production Engineering) <br />
+  <span className="text-sm text-secondary-foreground/70">
+    Full Stack Developer | DM for your work
+  </span>
+</p>
+
             </div>
           </div>
         </div>

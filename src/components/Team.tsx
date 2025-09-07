@@ -10,9 +10,20 @@ const Team = () => {
   ];
 
   const students = [
-    { name: "Mr. Lakshman Raghav V G", role: "Final Year B.E. Production SW" },
-    { name: "Mr. Balaji C", role: "Final Year B.E. Production" },
-    { name: "Mr. Sathish Kumar P", role: "Final Year B.E. Production" }
+    { 
+      name: "Mr. Lakshman Raghav V G", 
+      role: "Final Year B.E. Production SW", 
+      designation: "Secretary - SME (Society of Manufacturing Engineers, Students Chapter)" 
+    },
+    { 
+      name: "Mr. Balaji C", 
+      role: "Final Year B.E. Production", 
+      designation: "Secretary - PEA (Production Engineering Association)" 
+    },
+    { 
+      name: "Mr. Sathish Kumar P", 
+      role: "Final Year B.E. Production" 
+    }
   ];
 
   const renderCard = (member: any, index: number) => (
@@ -22,6 +33,9 @@ const Team = () => {
     >
       <h4 className="text-lg font-semibold text-gray-800">{member.name}</h4>
       <p className="text-sm text-gray-500">{member.role}</p>
+      {member.designation && (
+        <p className="text-xs text-blue-600 font-medium mt-2">{member.designation}</p>
+      )}
     </div>
   );
 
@@ -31,8 +45,12 @@ const Team = () => {
         
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-gray-800 mb-2">Our <span className="text-blue-600">Team</span></h2>
-          <p className="text-gray-600">Faculty members and student committee leading the techfest</p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-2">
+            Our <span className="text-blue-600">Team</span>
+          </h2>
+          <p className="text-gray-600">
+            Faculty members and student committee leading the techfest
+          </p>
         </div>
 
         {/* Faculty Section */}
@@ -56,7 +74,7 @@ const Team = () => {
             </div>
             <h3 className="text-2xl font-semibold text-gray-800">Student Committee</h3>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {students.map((member, i) => renderCard(member, i))}
           </div>
         </div>

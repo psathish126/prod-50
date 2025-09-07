@@ -46,7 +46,7 @@ const Contact = () => {
                   <div className="w-8 h-8 gradient-jubilee rounded-full flex items-center justify-center mr-3">
                     <Phone className="w-4 h-4 text-white" />
                   </div>
-                  Primary Coordinators
+                  Students Coordinators
                 </h4>
                 <div className="space-y-5">
                   <div>
@@ -85,7 +85,7 @@ const Contact = () => {
                 <h4 className="text-lg font-semibold text-foreground mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="https://instagram.com/"
+                    href="https://www.instagram.com/pea_sme"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-pink-500/10 hover:bg-pink-500/20 rounded-lg flex items-center justify-center transition-smooth group"
@@ -93,7 +93,7 @@ const Contact = () => {
                     <Instagram className="w-5 h-5 text-pink-500 group-hover:scale-110 transition-smooth" />
                   </a>
                   <a
-                    href="https://linkedin.com/"
+                    href="https://www.linkedin.com/company/pea-sme-psg-tech/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-blue-600/10 hover:bg-blue-600/20 rounded-lg flex items-center justify-center transition-smooth group"

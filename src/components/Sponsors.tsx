@@ -3,10 +3,6 @@ import { ExternalLink } from 'lucide-react';
 const Sponsors = () => {
   const sponsors = [
     { 
-      name: "Institution of Engineers", 
-      logo: "🏛️"
-    },
-    { 
       name: "TESA", 
       logo: "🎓"
     },
@@ -38,7 +34,7 @@ const Sponsors = () => {
         </div>
 
         {/* Sponsors Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {sponsors.map((sponsor, index) => (
             <div 
               key={index}

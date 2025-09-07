@@ -129,93 +129,108 @@ const Events = () => {
   ];
 
   return (
-    <section id="events" className="py-20 bg-white">
+    <section id="events" className="py-20 bg-gradient-to-b from-yellow-50 to-white">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Events & Workshops</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+            Events & Workshops
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Explore the industry-sponsored competitions, seminars, and lectures during the Golden Jubilee celebrations.
           </p>
         </div>
 
         {/* Event Grid */}
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {events.map((event) => (
             <div
               key={event.id}
-              className="bg-gray-50 border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition p-6 flex flex-col"
+              className="bg-white/70 backdrop-blur-md border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col"
             >
               {/* Poster */}
-              <img
-                src={event.poster}
-                alt={event.title}
-                className="w-full h-70 object-cover rounded-lg mb-4"
-              />
-
-              {/* Title + Description */}
-              <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
-              <p className="text-gray-600 mb-4">{event.description}</p>
-
-              {/* Details */}
-              <div className="space-y-2 text-sm text-gray-700 mb-6 flex-1">
-                <div className="flex items-center gap-2">
-                  <Calendar className="w-4 h-4" /> {event.date}
-                </div>
-                {event.prize !== "-" && (
-                  <div className="flex items-center gap-2">
-                    <Award className="w-4 h-4" /> {event.prize} PRIZEPOOL
-                  </div>
-                )}
-                <div>
-                  <strong>Organizers:</strong>
-                  <ul className="list-disc list-inside ml-2">
-                    {event.organizers.map((org, idx) => (
-                      <li key={idx}>{org}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <strong>Co-organizers:</strong>
-                  <ul className="list-disc list-inside ml-2">
-                    {event.coorganizers.map((co, idx) => (
-                      <li key={idx}>{co}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div>
-                  <strong>Coordinator:</strong>
-                  <ul className="list-disc list-inside ml-2">
-                    {event.coordinators.map((co, idx) => (
-                      <li key={idx} className="flex flex-col">
-                        <span>{co.name}</span>
-                        <div className="flex gap-3 mt-1 text-blue-600">
-                          <a href={`tel:${co.phone}`} className="flex items-center gap-1">
-                            <Phone className="w-4 h-4" /> {co.phone}
-                          </a>
-                          <a href={`mailto:${co.email}`} className="flex items-center gap-1">
-                            <Mail className="w-4 h-4" /> {co.email}
-                          </a>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
+              <div className="relative w-full h-80 overflow-hidden">
+                <img
+                  src={event.poster}
+                  alt={event.title}
+                  className="w-full h-46 object-cover transition-transform duration-500 hover:scale-105 hover:brightness-110"
+                />
+                <div className="absolute top-3 right-3 bg-yellow-500 text-white text-xs font-semibold px-3 py-1 rounded-full shadow">
+                  {event.date}
                 </div>
               </div>
 
-              {/* Buttons */}
-              <div className="flex gap-3 mt-auto">
-                <Button className="flex-1">Register</Button>
-                <a
-                  href={event.brochure}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1"
-                >
-                  <Button variant="outline" className="w-full flex items-center gap-2">
-                    <ExternalLink className="w-4 h-4" /> Details
+              {/* Content */}
+              <div className="flex flex-col flex-1 p-6">
+                <h3 className="text-lg md:text-xl font-bold mb-2 text-gray-900">
+                  {event.title}
+                </h3>
+                <p className="text-sm text-gray-600 mb-4 line-clamp-3">
+                  {event.description}
+                </p>
+
+                {/* Prize & Organizers */}
+                <div className="space-y-3 text-sm text-gray-700 flex-1">
+                  {event.prize !== "-" && (
+                    <span className="inline-flex items-center gap-1 text-yellow-700 bg-yellow-100 px-2 py-1 rounded-full text-xs font-medium">
+                      <Award className="w-4 h-4" /> {event.prize}
+                    </span>
+                  )}
+
+                  <div>
+                    <strong className="text-gray-800">Organizers:</strong>
+                    <ul className="list-disc list-inside ml-2 mt-1">
+                      {event.organizers.map((org, idx) => (
+                        <li key={idx}>{org}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div>
+                    <strong className="text-gray-800">Coordinator:</strong>
+                    <ul className="list-disc list-inside ml-2 mt-1">
+                      {event.coordinators.map((co, idx) => (
+                        <li key={idx} className="mt-1">
+                          <span className="font-medium">{co.name}</span>
+                          <div className="flex gap-3 mt-1 text-blue-600 text-xs">
+                            <a
+                              href={`tel:${co.phone}`}
+                              className="flex items-center gap-1 hover:underline"
+                            >
+                              <Phone className="w-3 h-3" /> {co.phone}
+                            </a>
+                            <a
+                              href={`mailto:${co.email}`}
+                              className="flex items-center gap-1 hover:underline"
+                            >
+                              <Mail className="w-3 h-3" /> {co.email}
+                            </a>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Buttons */}
+                <div className="flex gap-3 mt-6">
+                  <Button className="flex-1 bg-yellow-500 hover:bg-yellow-600 text-white rounded-full">
+                    Register
                   </Button>
-                </a>
+                  <a
+                    href={event.brochure}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full flex items-center justify-center gap-2 rounded-full border-gray-300 hover:bg-gray-100"
+                    >
+                      <ExternalLink className="w-4 h-4" /> Details
+                    </Button>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
